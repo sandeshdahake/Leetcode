@@ -1,4 +1,6 @@
-package array; 
+package array;
+
+import java.util.Arrays;
 
 /**
 
@@ -51,7 +53,8 @@ class Height_Checker {
         for(int i=0; i<heights.length; i++){
             expected[i]=heights[i];
         }
-        
+        //System.arraycopy(heights, 0, expected, 0, heights.length);
+
         Arrays.sort(expected);
         
         for(int i=0 ; i< heights.length ; i++){
