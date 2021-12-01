@@ -2,7 +2,8 @@ package linkedList;
 
 /**
  * https://leetcode.com/explore/learn/card/linked-list/219/classic-problems/1205/
- *
+ * https://leetcode.com/problems/reverse-linked-list/discuss/1449712/cjavapythonjavascript-explainedanimated/1075419
+ 
  * Given the head of a singly linked list, reverse the list, and return the reversed list.
  *
  *
