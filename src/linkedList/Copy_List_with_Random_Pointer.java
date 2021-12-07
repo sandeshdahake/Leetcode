@@ -47,37 +47,49 @@ package linkedList;
  * Node.random is null or is pointing to some node in the linked list.
  */
 public class Copy_List_with_Random_Pointer {
-    public Node copyRandomList(Node head) {
-        if (head == null) return null;
-
-        Node p = head;
-        while (p != null) {
-            Node node = new Node(p.val);
-            node.next = p.next;
-            p.next = node;
-            p = node.next;
+ public Node copyRandomList(Node head) {
+        if(head == null) return head;
+        
+        // make the copy LL inside the original LL
+        Node node = head;
+        Node next;
+        while(node != null) {
+            next = node.next;
+            
+            Node copyNode = new Node(node.val);
+            copyNode.next = next;
+            node.next = copyNode;
+            
+            node = next;
         }
-
-        Node dummy = new Node(0);
-        dummy.next = head.next;
-        p = head;
-        while (p != null) {
-            if (p.random != null) p.next.random = p.random.next;
-            p = p.next.next;
+        
+        // asign random pointer to copy nodes
+        node = head;
+        while(node != null) {
+            if(node.random != null) {
+                node.next.random = node.random.next;
+            }
+            node = node.next.next;
         }
-
-        p = head;
-        Node q = dummy.next;
-        while (p != null) {
-            p.next = p.next.next;
-            p = p.next;
-            if (q.next != null) q.next = q.next.next;
-            q = q.next;
+        
+        // segregate original LL with copy LL
+        node = head;
+        Node dummyHead = new Node(0);
+        Node copyNode = dummyHead;
+        Node copy;
+        while(node != null) {
+            next = node.next.next;
+            
+            copy = node.next;
+            copyNode.next = copy;
+            copyNode = copy;
+            
+            node.next = next;
+            node = next;
         }
-
-        return dummy.next;
-    }
-
+        
+        return dummyHead.next;
+ }
     class Node {
         int val;
         Node next;
