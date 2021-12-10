@@ -115,7 +115,6 @@ public class MyCircularQueue {
     public boolean isFull() {
         return ((tail + 1) % size) == head;
     }
-
     /**
      * Your MyCircularQueue object will be instantiated and called as such:
      * MyCircularQueue obj = new MyCircularQueue(k);
