@@ -46,7 +46,6 @@ import java.util.Stack;
  * VALUE < MIN  -> POP , MIN = 2*MIN -VALUE
  * TOP :
  * VALUE < MIN -> return MIN , VALUE
- * https://github.com/striver79/SDESheet/blob/main/minInStackOneStackSolutionJava
  */
 public class Min_Stack {
     Long min ;
