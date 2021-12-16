@@ -8,7 +8,7 @@ import java.util.Arrays;
 *
 *You are given an integer array heights representing the current order that the students are standing in. Each heights[i] is the height of the ith student in line (0-indexed).*
 *
-*Return the number of indices where heights[i] != expected[i].
+*Return the number of indices where heights[i] != expected[i]. 
 *
 * 
 *
