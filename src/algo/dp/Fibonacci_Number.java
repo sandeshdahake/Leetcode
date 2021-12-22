@@ -27,6 +27,8 @@ import java.util.HashMap;
  * Input: n = 4
  * Output: 3
  * Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
+ * Solved using DP 
+ *  Time : O(n) Space : O(n)
  */
 public class Fibonacci_Number {
     HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
