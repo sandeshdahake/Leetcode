@@ -29,28 +29,23 @@ import java.util.Arrays;
  * 0 <= nums[i] <= 400
  */
 public class House_Robber {
-    public int rob(int[] nums)
-    {
-        int dp[]=new int[nums.length+1];
-        Arrays.fill(dp,-1);
-        int res =calculate(nums,0,dp);
-        return res;
-    }
-    public static int calculate(int arr[],int curr,int dp[])
-    {
-        if(curr>=arr.length)
-        {
-            return 0;
+    public int rob(int[] nums) {
+        // If no house we will rob 0 amount
+        if(nums == null || nums.length == 0) return 0; 
+        // If 1 house we will rob first house 
+        if(nums.length == 1) return nums[0];
+        // if 2 house we will rob max of first and second 
+        if(nums.length == 2) return Math.max(nums[0],nums[1]);
+        // apply same logic to all the ith houses 
+        int[] dp = new int[nums.length];
+        dp[0] = nums[0];
+        dp[1] = Math.max(nums[0], nums[1]);
+        
+        for(int i=2; i< nums.length; i++){
+            // We can rob current house + amount from previous 2nd house )  or  middle hose ( previous house) 
+            dp[i] = Math.max(nums[i]+dp[i-2], dp[i-1]);
         }
-        if(dp[curr]!=-1)
-        {
-            return dp[curr];
-        }
-        int rob=0;
-        int norob=0;
-        rob=calculate(arr,curr+2,dp)+arr[curr];
-        norob=calculate(arr,curr+1,dp);
-        return dp[curr]=Math.max(rob,norob);
+        
+        return dp[nums.length-1];
     }
-
 }
