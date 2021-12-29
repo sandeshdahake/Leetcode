@@ -25,6 +25,7 @@ package ds.matrix;
  * n == matrix.length == matrix[i].length
  * 1 <= n <= 20
  * -1000 <= matrix[i][j] <= 1000
+ * Time = O(M) all the elements are touched twice ( M for Transpose and M for Reverse ) , Space : O(1) 
  */
 public class Rotate_Image {
     public void rotate(int[][] matrix) {
