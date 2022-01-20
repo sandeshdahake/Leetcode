@@ -29,6 +29,7 @@ package algo;
  * 1 <= time.length <= 6 * 104
  * 1 <= time[i] <= 500
  * https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/discuss/1661825/Group-values-with-same-modulus-into-buckets-and-count-pair
+ *
  */
 public class Pairs_Songs_Total_Durations_div_60 {
     public int numPairsDivisibleBy60(int[] time) {
